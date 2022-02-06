@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinAssessment">
         <activity
-            android:name=".FourthActivity"
+            android:name=".ui.FourthActivity"
             android:exported="false" />
         <activity
-            android:name=".ThirdActivity"
+            android:name=".ui.ThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".ui.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".FirstActivity"
+            android:name=".ui.FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

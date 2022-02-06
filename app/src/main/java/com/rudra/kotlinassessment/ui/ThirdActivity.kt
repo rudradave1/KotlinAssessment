@@ -1,9 +1,12 @@
-package com.rudra.kotlinassessment
+package com.rudra.kotlinassessment.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.rudra.kotlinassessment.R
+import com.rudra.kotlinassessment.data.Group
+import com.rudra.kotlinassessment.data.PlayerGame
 
 class ThirdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

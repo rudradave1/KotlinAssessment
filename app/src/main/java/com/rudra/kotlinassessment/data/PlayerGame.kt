@@ -1,4 +1,4 @@
-package com.rudra.kotlinassessment
+package com.rudra.kotlinassessment.data
 
 data class PlayerGame(
 

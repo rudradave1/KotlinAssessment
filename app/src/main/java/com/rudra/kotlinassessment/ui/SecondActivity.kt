@@ -1,10 +1,10 @@
-package com.rudra.kotlinassessment
+package com.rudra.kotlinassessment.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import kotlinx.coroutines.*
+import com.rudra.kotlinassessment.R
 
 class SecondActivity : AppCompatActivity() {
 

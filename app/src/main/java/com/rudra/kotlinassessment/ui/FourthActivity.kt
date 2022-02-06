@@ -1,15 +1,13 @@
-package com.rudra.kotlinassessment
+package com.rudra.kotlinassessment.ui
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.rudra.kotlinassessment.R
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlin.random.Random
-import kotlin.streams.asStream
 
 class FourthActivity : AppCompatActivity() {
 

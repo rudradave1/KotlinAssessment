@@ -1,11 +1,11 @@
-package com.rudra.kotlinassessment
+package com.rudra.kotlinassessment.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.rudra.kotlinassessment.R
 import kotlinx.coroutines.*
 
 class FirstActivity : AppCompatActivity() {
