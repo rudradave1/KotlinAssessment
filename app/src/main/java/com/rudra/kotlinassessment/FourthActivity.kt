@@ -51,8 +51,8 @@ class FourthActivity : AppCompatActivity() {
         }
         */
 
-        val listOne = listOf(1, 1, 3, 3, 3, 4, 5, 8, 12, 12, 13, 13, 13, 13)
-        val listTwo = listOf(5,5,25,25,25,25,75,75,100,200,200,225)
+        val listOne =  List(10) { Random.nextInt(0, 10) }
+        val listTwo =  List(10) { Random.nextInt(0, 10) }
 
         val flow = flow {
             emit(listOne.plus(listTwo).groupingBy { it }.eachCount())
