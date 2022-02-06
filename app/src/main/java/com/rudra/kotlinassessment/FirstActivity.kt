@@ -10,25 +10,25 @@ import kotlinx.coroutines.*
 
 class FirstActivity : AppCompatActivity() {
 
-    private lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
 
-        button = findViewById(R.id.button)
+        val button: Button = findViewById(R.id.button)
+        val nextButton: Button = findViewById(R.id.nextButton)
 
         button.setOnClickListener {
             showDialog()
         }
 
-        val nextButton = findViewById<TextView>(R.id.nextButton)
         nextButton.setOnClickListener{
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
     }
 
+    // function to display the dialog
     private fun showDialog() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Are you sure?")
