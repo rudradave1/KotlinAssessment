@@ -18,9 +18,9 @@ class TaskTwoActivity : AppCompatActivity() {
 //        tn = tn-1  x 3 + tn-2
 //        1,1,4,13,43,143,...
 
-        val sequence = generateSequence ( Pair(0, 1) ) {
-            Pair(it.second, (it.first * 3) + it.second)}.map { it.first }
-        // [0, 1, 1, 4, 7, 19, 40, 97, 217, 508]
+        val sequence = generateSequence ( Pair(1, 1) ) {
+            Pair(it.second, it.first + (it.second * 3))}.map { it.second }
+        // [ 1, 4, 13, 43, 142, 469 ]
 
         textView.text = sequence.take(n).toList().toString()
 
