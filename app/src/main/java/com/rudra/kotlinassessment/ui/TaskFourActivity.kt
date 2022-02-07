@@ -17,10 +17,6 @@ class TaskFourActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fourth)
 
-        val counterOne: TextView = findViewById(R.id.counterOne)
-        val counterTwo: TextView = findViewById(R.id.counterTwo)
-
-
         lifecycleScope.launch { // Dispatchers.Main
             val flowA = flow {
                 var i: Int = 0
@@ -41,7 +37,11 @@ class TaskFourActivity : AppCompatActivity() {
                 }
             }
 
-            merge(flowA, flowB).collect { println(it.toString()) } // Prints two integers
+            //prints two integers simultaneously
+            merge(flowA, flowB).collect { println(it.toString()) }
+
+
+
 /*
         //created two list generating random numbers to count frequencies
         val listOne =  List(10) { Random.nextInt(0, 10) }

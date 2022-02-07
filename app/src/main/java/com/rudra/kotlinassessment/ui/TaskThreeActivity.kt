@@ -40,10 +40,9 @@ class TaskThreeActivity : AppCompatActivity() {
 
         )
 
-
         //Solution line
         //Sorted by player number
-        val scoreBoard = match.groupingBy{it.group}.fold(0) {sum, element -> sum + element.score}
+        val scoreBoard = match.groupingBy{it.player}.fold(0) { sum, element -> sum + element.score }
 
         val textView = findViewById<TextView>(R.id.textView)
         textView.text = scoreBoard.toString()
