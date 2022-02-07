@@ -3,13 +3,15 @@ package com.rudra.kotlinassessment.ui
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.rudra.kotlinassessment.R
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
-class FourthActivity : AppCompatActivity() {
+class TaskFourActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,39 +20,29 @@ class FourthActivity : AppCompatActivity() {
         val counterOne: TextView = findViewById(R.id.counterOne)
         val counterTwo: TextView = findViewById(R.id.counterTwo)
 
-        //Old code
-        /*val randomNumber = (0..10).random()
 
-        val flowOne = flow<Int> {
-            while(true){
-                emit(randomNumber)
-                delay(1000)
-            }
-        }
-
-        val flowTwo = flow<Int> {
-//            for (i in 10 downTo 0){
-//                emit(i)
-//                delay(1000)
-//            }
-            while(true){
-                emit(randomNumber)
-                delay(1000)
-            }
-        }
-
-        GlobalScope.launch{
-            flowOne.collect {
-                counterOne.text = it.toString()
-
-                flowTwo.collect { next ->
-                    counterTwo.text = next.toString()
+        lifecycleScope.launch { // Dispatchers.Main
+            val flowA = flow {
+                var i: Int = 0
+                for (i in 0..100) {
+                    if (i % 2 == 0){
+                        delay(2000)
+                        emit(i)
+                    }
                 }
             }
-        }
-        */
+            val flowB = flow {
+                var i: Int = 0
+                for (i in 0..100) {
+                    if(i % 2 != 0){
+                        delay(5000)
+                        emit(i)
+                    }
+                }
+            }
 
-
+            merge(flowA, flowB).collect { println(it.toString()) } // Prints two integers
+/*
         //created two list generating random numbers to count frequencies
         val listOne =  List(10) { Random.nextInt(0, 10) }
         val listTwo =  List(10) { Random.nextInt(0, 10) }
@@ -72,6 +64,7 @@ class FourthActivity : AppCompatActivity() {
                 counterOne.text = it.toString()
             }
         }
+    }*/
+        }
     }
-
 }

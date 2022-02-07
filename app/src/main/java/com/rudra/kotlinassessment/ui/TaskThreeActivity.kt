@@ -8,7 +8,7 @@ import com.rudra.kotlinassessment.R
 import com.rudra.kotlinassessment.data.Group
 import com.rudra.kotlinassessment.data.PlayerGame
 
-class ThirdActivity : AppCompatActivity() {
+class TaskThreeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
@@ -43,15 +43,14 @@ class ThirdActivity : AppCompatActivity() {
 
         //Solution line
         //Sorted by player number
-        val scoreBoard = match.toList().sortedBy { it.player }.toString()
+        val scoreBoard = match.groupingBy{it.group}.fold(0) {sum, element -> sum + element.score}
 
         val textView = findViewById<TextView>(R.id.textView)
-        textView.text = scoreBoard
-
+        textView.text = scoreBoard.toString()
 
         val nextButton = findViewById<TextView>(R.id.nextButton)
         nextButton.setOnClickListener{
-            val intent = Intent(this, FourthActivity::class.java)
+            val intent = Intent(this, TaskFourActivity::class.java)
             startActivity(intent)
         }
     }

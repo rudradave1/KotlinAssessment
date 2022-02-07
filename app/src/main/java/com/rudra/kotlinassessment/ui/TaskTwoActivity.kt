@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.rudra.kotlinassessment.R
 
-class SecondActivity : AppCompatActivity() {
+class TaskTwoActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,15 +18,15 @@ class SecondActivity : AppCompatActivity() {
 //        tn = tn-1  x 3 + tn-2
 //        1,1,4,13,43,143,...
 
-        val sequence = generateSequence(seed) { (it - 1) * 3 }.map { it + (it - 2) }
-//        val pairs = generateSequence(Pair(1, 1)) { Pair(it.first * 3, it.second) }
-//        val ints = pairs.map { it.first + it.second. }
+        val sequence = generateSequence ( Pair(0, 1) ) {
+            Pair(it.second, (it.first * 3) + it.second)}.map { it.first }
+        // [0, 1, 1, 4, 7, 19, 40, 97, 217, 508]
 
         textView.text = sequence.take(n).toList().toString()
 
         val nextButton = findViewById<TextView>(R.id.nextButton)
         nextButton.setOnClickListener{
-            val intent = Intent(this, ThirdActivity::class.java)
+            val intent = Intent(this, TaskThreeActivity::class.java)
             startActivity(intent)
         }
     }
